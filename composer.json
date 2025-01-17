@@ -1,0 +1,30 @@
+{
+    "name": "c247/codebank-test",
+    "description": "A Admin Panel to get you started",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.3",
+    "autoload": {
+        "psr-4": {
+            "c247\\codebank\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "*",
+        "nesbot/carbon": "*",
+        "spatie/laravel-permission": "*",
+        "illuminate/auth": "*"
+    },
+    "require-dev": {
+        "laravel/breeze": "^1.9"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "c247\\codebank\\Providers\\CodeBankServiceProvider",
+                "c247\\codebank\\Providers\\RouteServiceProvider"
+            ]
+        }
+    }
+}
