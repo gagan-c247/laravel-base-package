@@ -2,8 +2,7 @@
 
 namespace App\Http\Requests\Admin\Auth;
 
-use App\Http\Requests\BaseRequest;
-use Illuminate\Foundation\Http\FormRequest;
+use C247\Codebank\Requests\BaseRequest;
 
 class UpdateProfileImage extends BaseRequest
 {

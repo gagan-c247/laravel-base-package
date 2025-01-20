@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests\Admin\Auth;
 
-use App\Http\Requests\BaseRequest;
+use C247\Codebank\Requests\BaseRequest;
 
 class ChangePassword extends BaseRequest
 {

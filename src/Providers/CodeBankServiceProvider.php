@@ -2,8 +2,8 @@
 
 namespace c247\codebank\Providers;
 
-use c247\codebank\Commands\InstallCodebank;
-use c247\codebank\Middleware\CheckUserActive;
+use C247\Codebank\Commands\InstallCodebank;
+use C247\Codebank\Middleware\CheckUserActive;
 use Illuminate\Support\ServiceProvider;
 
 class CodeBankServiceProvider extends ServiceProvider
@@ -14,27 +14,26 @@ class CodeBankServiceProvider extends ServiceProvider
         $this->commands([
             InstallCodebank::class,
         ]);
-
+        // publishing routes
         $this->publishes([
-            __DIR__ . '/../stubs/routes' => base_path('routes')
+            __DIR__ . '/../Stubs/routes' => base_path('routes')
         ], 'codebank-routes');
+        //publising requests
         $this->publishes([
-            __DIR__ . '/../stubs/requests' => base_path('app/Http/Requests')
+            __DIR__ . '/../Stubs/requests' => base_path('app/Http/Requests')
         ], 'codebank-requests');
+        // publishing migrations
         $this->publishes([
-            __DIR__ . '/../stubs/migrations' => base_path('database/migrations')
+            __DIR__ . '/../Stubs/migrations' => base_path('database/migrations')
         ], 'codebank-migrations');
-
-        $this->publishes([__DIR__ . '/../stubs/controllers' => base_path('app/Http/Controllers')], 'codebank-controllers');
-        $this->publishes([__DIR__ . '/../stubs/services' => base_path('app/Services')], 'codebank-services');
-        $this->publishes([__DIR__ . '/../stubs/models' => base_path('app/Models')], 'codebank-models');
-        $this->publishes([__DIR__ . '/../stubs/Traits' => base_path('app/Traits')], 'codebank-traits');
-        $this->publishes([__DIR__ . '/../stubs/resources/views/admin' => base_path('resources/views/admin'), __DIR__ . '/../stubs/resources/lang' => base_path('resources/lang'), __DIR__ . '/../stubs/resources/admin' => base_path('resources/admin'), __DIR__ . '/../stubs/resources/public/admin' => base_path('public/admin')], 'codebank-views');
-        $this->publishes([__DIR__ . '/../stubs/Middleware' => base_path('app/Http/Middleware')], 'codebank-middlewares');
-        $this->publishes([__DIR__ . '/../stubs/components' => base_path('app/View/Components')], 'codebank-components');
-        $this->publishes([__DIR__ . '/../stubs/seeders' => base_path('database/seeders')], 'codebank-seeders');
-
-        // $this->publishes([__DIR__ . '/../stubs/services' => base_path('app/Services')], 'codebank-services');
+        // publishing controllers
+        $this->publishes([__DIR__ . '/../Stubs/controllers' => base_path('app/Http/Controllers/Admin')], 'codebank-controllers');
+        //publishing services
+        $this->publishes([__DIR__ . '/../Stubs/services' => base_path('app/Services/Admin')], 'codebank-services');
+        // publishing models
+        $this->publishes([__DIR__ . '/../Stubs/models' => base_path('app/Models')], 'codebank-models');
+        // publishing views and assets and langs
+        $this->publishes([__DIR__ . '/../Stubs/resources/views/' => base_path('resources/views/admin'), __DIR__ . '/../Stubs/resources/lang' => base_path('resources/lang'), __DIR__ . '/../Stubs/resources/assets' => base_path('public/admin')], 'codebank-views');
     }
     public function boot()
     {

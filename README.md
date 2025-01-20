@@ -1,5 +1,3 @@
-# Installation Instructions
-
 <div style="font-family: Arial, sans-serif; line-height: 1.6;">
 
 <h2>Installation Steps</h2>
@@ -27,8 +25,13 @@ class User extends Authenticatable implements UserContract
 </code></pre>
   </li>
   <li>
-    Run the database seeder to set necessary permissions for the admin user:
-    <pre><code>php artisan db:seed --class=AdminAndPermissionSeeder</code></pre>
+    Add the <code>C247\Codebank\Seeders\AdminSeeder</code> class to your <code>DatabaseSeeder</code> file to set necessary permissions for the admin user:
+    <pre><code>
+public function run()
+{
+    $this->call(C247\Codebank\Seeders\AdminSeeder::class);
+}
+</code></pre>
   </li>
   <li>
     The default admin user credentials are:

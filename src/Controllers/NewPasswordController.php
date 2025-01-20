@@ -1,6 +1,6 @@
 <?php
 
-namespace c247\Codebank\Controllers;
+namespace C247\Codebank\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\PasswordReset;
